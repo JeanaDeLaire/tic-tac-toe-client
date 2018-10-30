@@ -1,0 +1,68 @@
+@import '~bootstrap/scss/bootstrap';
+
+h1 {
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: auto;
+  height: 80vw;
+  width: 80vw;
+  max-width: 600px;
+  max-height: 600px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .grid-container {
+    margin: auto;
+    width: 80vw;
+    height: 80vw;
+  }
+}
+
+.grid-item {
+  /* border: 1px solid rgba(0, 0, 0, 0.8); */
+  font-size: 30px;
+}
+
+#item-a {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+#item-b {
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+#item-c {
+  border-bottom: 1px solid black;
+}
+
+#item-d {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+#item-e {
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+#item-f {
+  border-bottom: 1px solid black;
+}
+
+#item-g {
+  border-right: 1px solid black;
+}
+
+#item-h {
+  border-right: 1px solid black;
+}
+
+// #item-i {
+// }
