@@ -1,7 +1,63 @@
 @import '~bootstrap/scss/bootstrap';
 
-h1 {
+// colors
+// blurple o : R: 127 G: 137 B: 195
+// pink : R: 192 G: 132 B: 164
+// purple: R: 102 G: 97 B: 126
+// Green : R: 102 G: 131 B: 152
+.hero-image {
+  background-image: url('../public/header.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vw;
+  margin-bottom: 5vw;
+  position: relative;
+}
+
+.toggle {
+  float: right;
+  position: relative;
+  display: block;
+}
+
+#api-login {
+  background-color: white;
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.show {
+  display:block;
+}
+
+.hero-text {
+  color: white;
+  margin: auto;
+  position: static;
   text-align: center;
+}
+
+.fight {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  height: 15vw;
+  width: 100%;
+}
+
+.animation {
+  height: 15vw;
+}
+
+.x-fight {
+  display: flex;
+  align-items: flex-start;
+}
+
+.o-fight {
+  display: flex;
+  align-items: flex-end;
 }
 
 .grid-container {
@@ -13,55 +69,62 @@ h1 {
   max-width: 600px;
   max-height: 600px;
   text-align: center;
+  border-radius: 25px;
+  border: 3px solid #84828f;
+  padding: 15px;
 }
 
-@media only screen and (max-width: 600px) {
-  .grid-container {
-    margin: auto;
-    width: 80vw;
-    height: 80vw;
-  }
-}
+// @media only screen and (max-width: 600px) {
+//   .grid-container {
+//     margin: auto;
+//     width: 80vw;
+//     height: 80vw;
+//   }
+// }
 
 .grid-item {
-  /* border: 1px solid rgba(0, 0, 0, 0.8); */
   font-size: 30px;
+  background-color:	rgba(152, 150, 164, .9);
+  border-radius: 10px;
+}
+.grid-item:hover {
+  background-color: white;
 }
 
 #item-a {
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
+  border-right: 3px solid #84828F;
+  border-bottom: 3px solid #84828F;
 }
 
 #item-b {
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
+  border-bottom: 3px solid #84828F;
+  border-right: 3px solid #84828F;
 }
 
 #item-c {
-  border-bottom: 1px solid black;
+  border-bottom: 3px solid #84828F;
 }
 
 #item-d {
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
+  border-right: 3px solid #84828F;
+  border-bottom: 3px solid #84828F;
 }
 
 #item-e {
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
+  border-bottom: 3px solid #84828F;
+  border-right: 3px solid #84828F;
 }
 
 #item-f {
-  border-bottom: 1px solid black;
+  border-bottom: 3px solid #84828F;
 }
 
 #item-g {
-  border-right: 1px solid black;
+  border-right: 3px solid #84828F;
 }
 
 #item-h {
-  border-right: 1px solid black;
+  border-right: 3px solid #84828F;
 }
 
 // #item-i {
