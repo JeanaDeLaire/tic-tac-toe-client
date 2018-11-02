@@ -39,9 +39,10 @@
 }
 
 .fight {
+  margin: auto;
   display: flex;
-  justify-content: center;
   flex-direction: row;
+  justify-content: center;
   height: 15vw;
   width: 100%;
 }
@@ -52,12 +53,10 @@
 
 .x-fight {
   display: flex;
-  align-items: flex-start;
 }
 
 .o-fight {
   display: flex;
-  align-items: flex-end;
 }
 
 .grid-container {
