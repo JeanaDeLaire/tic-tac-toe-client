@@ -10,12 +10,19 @@ const authEvents = require('./auth/events.js')
 
 $(() => {
   // your JS code goes here
+  // toggle authentication prompts
+
+  $('.sidebar').click(function () {
+    $('#api-login').toggle()
+  })
 
   let board = [
     [' ', ' ', ' '],
     [' ', ' ', ' '],
     [' ', ' ', ' ']
   ]
+
+  console.log(board)
 
   const playerOne = 'X'
   const playerTwo = 'O'
@@ -43,12 +50,88 @@ $(() => {
   // when divs with the class grid-item are clicked run the play function
   $('.grid-item').click(play)
 
-const click = $(() => {
-    $('.sidebar').click(function () {
-      $('#api-login').toggle()
-    })
-})
+//
+// win options:
+// board = [
+//   ['X', 'X', 'X'],
+//   [' ', ' ', ' '],
+//   [' ', ' ', ' ']
+// ]
+// board = [
+//   ['O', 'O', 'O'],
+//   [' ', ' ', ' '],
+//   [' ', ' ', ' ']
+// ]
+//
+// if (board[0][1][2] = 'X') {
+//   // x wins
+// }
+// board = [
+//   [' ', ' ', ' '],
+//   ['X', 'X', 'X'],
+//   [' ', ' ', ' ']
+// ]
+// board = [
+//   [' ', ' ', ' '],
+//   ['O', 'O', 'O'],
+//   [' ', ' ', ' ']
+// ]
+// if (board[0]
+//
+// board = [
+//   [' ', ' ', ' '],
+//   [' ', ' ', ' '],
+//   ['X', 'X', 'X']
+// ]
+// board = [
+//   [' ', ' ', ' '],
+//   [' ', ' ', ' '],
+//   ['O', 'O', 'O']
+// ]
+// board = [
+//   ['X', ' ', ' '],
+//   ['X', ' ', ' '],
+//   ['X', ' ', ' ']
+// ]
+// board = [
+//   ['O', ' ', ' '],
+//   ['O', ' ', ' '],
+//   ['O', ' ', ' ']
+// ]
+// board = [
+//   [' ', 'X', ' '],
+//   [' ', 'X', ' '],
+//   [' ', 'X', ' ']
+// ]
+// board = [
+//   [' ', 'O', ' '],
+//   [' ', 'O', ' '],
+//   [' ', 'O', ' ']
+// ]
+// board = [
+//   [' ', ' ', 'X'],
+//   [' ', ' ', 'X'],
+//   [' ', ' ', 'X']
+// ]
+// board = [
+//   [' ', ' ', 'O'],
+//   [' ', ' ', 'O'],
+//   [' ', ' ', 'O']
+// ]
+// board = [
+//   ['X', ' ', ' '],
+//   [' ', 'X', ' '],
+//   [' ', ' ', 'X']
+// ]
+// board = [
+//   ['O', ' ', ' '],
+//   [' ', 'O', ' '],
+//   [' ', ' ', 'O']
+// ]
 
+
+
+// reset the board on a click
 const reset = function () {
     if (document.getElementsByClassName === playerOne || playerTwo) {
       board = [
@@ -57,27 +140,14 @@ const reset = function () {
         [' ', ' ', ' ']
       ]
       $('.grid-item').html(' ')
+      currentMove = ' '
+      console.log(board)
     }
   }
-$('#reset').click(reset)
-
-// function myFunction() {
-//     const sign-up = document.getElementById("sign-up")
-//     const sign-in = document.getElementById("sign-in")
-//     const sign-out = document.getElementById("sign-out")
-//     const change-password = document.getElementById("change-password")
-//     if (x.style.display === "none") {
-//         x.style.display = "block";
-//     } else if
-//       var x = document.getElementById("sign-in"); {
-//         x.style.display = "none";
-//     }
-// }
-
-
+  $('#reset').click(reset)
 
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
+  $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
-  // $('#change-password').on('submit', authEvents.onChangePassword)
 })
