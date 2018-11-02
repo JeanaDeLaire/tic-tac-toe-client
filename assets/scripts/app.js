@@ -50,8 +50,31 @@ $(() => {
   // when divs with the class grid-item are clicked run the play function
   $('.grid-item').click(play)
 
+  // const checkForWins = function () {
+  //   for (let i = 0; i < board.length; i++) {
+  //     if (board[i][0] === playerOne && board[i][1] === playerOne && board[i][2] === playerOne) {
+  //       console.log('X Wins')
+  //     }
+    // }
+
+    // for (let i = 0; i < board.length; i++) {
+    //   for (let j = 0; j < board[i].length; i++) {
+    //     board[i][j] === playerOne
+    //   }
+    // }
+    // let threeInARow = false
+    // if (board.some(row => row.every(el => el === playerOne))) {
+    //   threeInARow = true
+    // }
+
+
+    // if any of these are true return win
+  //   return threeInARow || threeinA
+  // }
+  // $('.grid-item').click(checkForWins)
+
 //
-// win options:
+// win options
 // board = [
 //   ['X', 'X', 'X'],
 //   [' ', ' ', ' '],
