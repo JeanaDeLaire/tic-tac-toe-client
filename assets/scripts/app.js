@@ -13,8 +13,8 @@ $(() => {
   // your JS code goes here
   // toggle authentication prompts
 
-  $('.sidebar').click(function () {
-    $('#api-login').toggle()
+  $('#sidebar').click(function () {
+    $('.show-hide').toggle()
   })
 
   $('#create-game').click(function () {

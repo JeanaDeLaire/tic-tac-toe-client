@@ -17,17 +17,20 @@
   <div class="hero-image">
 
     <div class="toggle">
-      <button class="sidebar">Start Here!</button>
+      <button id="sidebar">Start Here!</button>
+      <button id="create-game">New Game</button>
+      <button id="game-history">Game History</button>
+    </div>
+    <div class="show-hide">
       <div id="api-login">
-            <p id="message"></p>
-            <form id="sign-up">
+            <form id="sign-up" class="border">
               <legend>Sign Up!</legend>
               <input name="credentials[email]" type="text" value="email">
               <input name="credentials[password]" type="password" value="password">
               <input name="credentials[password_confirmation]" type="password" value="confirm password">
               <input type="submit" value="Sign Up!"/>
             </form>
-            <form id="sign-in">
+            <form id="sign-in" class="border">
               <legend>Sign In!</legend>
               <input name="credentials[email]" type="text" value="email">
               <input name="credentials[password]" type="password" value="password">
@@ -39,25 +42,23 @@
               <input type="password" name="passwords[new]" placeholder="New Password">
               <input type="submit" value="Change Password!">
             </form>
+            <p id="message"></p>
             <button id="sign-out" type="submit">Sign Out!</button>
-    </div>
-  </div>
+        </div>
+      </div>
 
     <div class="hero-text">
-      <h1>Tic Tac Toe</h1>
+      <h1 id="title">Tic-Tac-Toe</h1>
     </div>
-
 </div>
-<div class="fight">
-  <div class="x-fight">
-    <div id="x-animation"><img class="animation" src="../public/xAnimation.png" alt="X Image"></div>
+<!--
+<div class="fight"> -->
+  <!-- <div id="x-animation"><img class="x-fight animation" src="../public/xAnimation.png" alt="X Image"></div> -->
     <!-- <div id="x-sword"><img id="x-swords" src="../public/xSword.png" alt="X sword"></div> -->
-  </div>
-  <div class="o-fight">
   <!-- <div id="o-sword"><img id="o-swords" src="../public/oSword.png" alt="O sword"></div> -->
-  <div id="o-animation"><img class="animation" src="../public/oAnimation.png" alt="O Image"></div>
-  </div>
-</div>
+  <!-- <div id="o-animation"><img class="o-fight animation" src="../public/oAnimation.png" alt="O Image"></div>
+  </div> -->
+
 <div class="grid-container">
   <div class="grid-item" id="item-a" data-r=0 data-c=0><h1 class="grid-text"></h1></div>
   <div class="grid-item" id="item-b" data-r=0 data-c=1><h1 class="grid-text"></h1></div>
@@ -70,13 +71,13 @@
   <div class="grid-item" id="item-i" data-r=2 data-c=2><h1 class="grid-text"></h1></div>
 </div>
 
-<div>
-<button id="create-game">Create Game</button>
-<button id="game-history">Get Game History</button>
+<!-- <div>
+<button id="create-game">New Game</button>
+<button id="game-history">Game History</button>
 <div class="game-alerts">
-  <p id="stats">Testing.Testing.</p>
+  <p id="stats"></p>
 </div>
-</div>
+</div> -->
 
     </body>
 

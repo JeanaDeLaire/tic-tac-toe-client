@@ -103,9 +103,9 @@ $('.grid-item').click(checkForWins)
 const onCreateGame = event => {
   event.preventDefault()
   const data = {}
-  api.createGame(data)
-    .then(ui.createGameSuccess)
-    .catch(ui.createGameFailure)
+  // api.createGame(data)
+  //   .then(ui.createGameSuccess)
+  //   .catch(ui.createGameFailure)
   if (document.getElementsByClassName === playerOne || playerTwo) {
     board = [
       [' ', ' ', ' '],

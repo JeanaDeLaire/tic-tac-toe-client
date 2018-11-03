@@ -9,66 +9,84 @@
   background-image: url('../public/header.png');
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
   height: 30vw;
-  margin-bottom: 5vw;
+  margin-bottom: 2vw;
   position: relative;
 }
 
 .toggle {
-  float: right;
-  position: relative;
-  display: block;
+  display: flex;
+  align-self: flex-end;
+  position: fixed;
+}
+
+#game-history {
+  margin-right: 10px;
 }
 
 #api-login {
   background-color: white;
-  display: none;
+  display: flex;
+  flex-direction: column;
   position: absolute;
+  max-width: 50vw;
   z-index: 1;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  padding: 20px;
+  margin-left: 60vw;
 }
 
-.show {
-  display:block;
+.show-hide {
+  display: none;
 }
 
 .hero-text {
-  color: white;
+  display: flex;
+  color: #fff;
   margin: auto;
   position: static;
   text-align: center;
 }
 
-.fight {
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  height: 15vw;
-  width: 100%;
+#title {
+  font-size: 80px;
 }
 
-.animation {
-  height: 15vw;
-}
-
-.x-fight {
-  display: flex;
-}
-
-.o-fight {
-  display: flex;
-}
+// .fight {
+//   margin: auto;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   height: 15vw;
+//   width: 100%;
+// }
+//
+// .animation {
+//   height: 10vw;
+// }
+//
+// .x-fight {
+//   display: flex;
+// }
+//
+// .o-fight {
+//   display: flex;
+// }
 
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  margin: auto;
+  margin: 9vw auto;
+  // margin-bottom: 5vw;
   height: 80vw;
   width: 80vw;
   max-width: 600px;
   max-height: 600px;
   text-align: center;
-  border-radius: 25px;
+  border-radius: 10px;
   border: 3px solid #84828f;
   padding: 15px;
 }
@@ -84,7 +102,6 @@
 .grid-item {
   font-size: 30px;
   background-color:	rgba(152, 150, 164, .9);
-  border-radius: 10px;
 }
 .grid-item:hover {
   background-color: white;
@@ -93,6 +110,7 @@
 #item-a {
   border-right: 3px solid #84828F;
   border-bottom: 3px solid #84828F;
+  border-top-left-radius: 10px;
 }
 
 #item-b {
@@ -102,6 +120,7 @@
 
 #item-c {
   border-bottom: 3px solid #84828F;
+  border-top-right-radius: 10px;
 }
 
 #item-d {
@@ -120,11 +139,13 @@
 
 #item-g {
   border-right: 3px solid #84828F;
+  border-bottom-left-radius: 10px;
 }
 
 #item-h {
   border-right: 3px solid #84828F;
 }
 
-// #item-i {
-// }
+#item-i {
+  border-bottom-right-radius: 10px;
+}
