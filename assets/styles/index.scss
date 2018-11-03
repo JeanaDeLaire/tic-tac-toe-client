@@ -22,25 +22,55 @@
   position: fixed;
 }
 
-#game-history {
+#toggle-2 {
+  display: none;
+  align-self: flex-end;
+  position: fixed;
+}
+
+#sign-out {
   margin-right: 10px;
+  display: block;
 }
 
 #api-login {
   background-color: white;
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   max-width: 50vw;
   z-index: 1;
   flex-wrap: wrap;
   margin-top: 30px;
   padding: 20px;
   margin-left: 60vw;
+  margin-right: 10px;
+}
+
+#api-logout {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  max-width: 50vw;
+  z-index: 1;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  padding: 20px;
+  margin-left: 60vw;
+  margin-right: 10px;
 }
 
 .show-hide {
   display: none;
+}
+
+.show-hide-2 {
+  display: none;
+}
+
+#sidebar {
+  margin-right: 10px;
 }
 
 .hero-text {
@@ -52,7 +82,7 @@
 }
 
 #title {
-  font-size: 80px;
+  font-size: 7vw;
 }
 
 // .fight {

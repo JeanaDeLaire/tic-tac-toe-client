@@ -23,6 +23,9 @@ const signInSuccess = data => {
   $('#message').removeClass()
   $('#message').addClass('success')
   console.log('signInSuccess ran. Data is :', data)
+  $('#api-login').css('display', 'none')
+  $('#sidebar').css('display', 'none')
+  $('#toggle-2').css('display', 'flex')
 }
 
 const signInFailure = error => {
@@ -33,32 +36,32 @@ const signInFailure = error => {
 }
 
 const changePasswordSuccess = data => {
-  $('#message').text('Password changed successfully')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#message-2').text('Password changed successfully')
+  $('#message-2').removeClass()
+  $('#message-2').addClass('success')
   console.log('changePasswordSuccess ran. Data is :', data)
 }
 
 const changePasswordFailure = error => {
-  $('#message').text('Error on password change')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message-2').text('Error on password change')
+  $('#message-2').removeClass()
+  $('#message-2').addClass('failure')
   console.error('changePasswordFailure ran. Error is :', error)
 }
 
 const signOutSuccess = data => {
   // console.log(null.user.token)
-  $('#message').text('Signed Out successfully')
+  $('#message-2').text('Signed Out successfully')
   store.user = null
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#message-2').removeClass()
+  $('#message-2').addClass('success')
   console.log('signOutSuccess ran. Data is :', data)
 }
 
 const signOutFailure = error => {
-  $('#message').text('Sign Out failed')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#message-2').text('Sign Out failed')
+  $('#message-2').removeClass()
+  $('#message-2').addClass('failure')
   console.log('signOutFailure ran. Data is :', error)
 }
 

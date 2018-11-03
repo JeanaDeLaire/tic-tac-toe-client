@@ -13,6 +13,9 @@ let board = [
 const playerOne = 'X'
 const playerTwo = 'O'
 let currentMove = ''
+let rowWin = false
+let colWin = false
+let diagWin = false
 
 const updateGame = event => {
   event.preventDefault()
@@ -53,52 +56,53 @@ const play = function (event) {
 $('.grid-item').click(play)
 
 const checkForWins = function () {
-  let rowWin = false
-  // let colWin = false
-  // let diagWin = false
   if (board.some(row => row.every(el => el === playerOne))) {
     console.log('X Wins')
     rowWin = true
+  } else if (board.some(row => row.every(el => el === playerTwo))) {
+    console.log('O Wins')
+    rowWin = true
+  } else if (board[0][0] === playerOne && board[1][0] === playerOne && board[2][0] === playerOne) {
+    console.log('X Wins')
+    colWin = true
+  } else if (board[0][1] === playerOne && board[1][1] === playerOne && board[2][1] === playerOne) {
+    console.log('X Wins')
+    colWin = true
+  } else if (board[0][2] === playerOne && board[1][2] === playerOne && board[2][2] === playerOne) {
+    console.log('X Wins')
+    colWin = true
+  } else if (board[0][0] === playerTwo && board[1][0] === playerTwo && board[2][0] === playerTwo) {
+    console.log('O Wins')
+    colWin = true
+  } else if (board[0][1] === playerTwo && board[1][1] === playerTwo && board[2][1] === playerTwo) {
+    console.log('O Wins')
+    colWin = true
+  } else if (board[0][2] === playerTwo && board[1][2] === playerTwo && board[2][2] === playerTwo) {
+    console.log('O Wins')
+    colWin = true
+  } else if (board[0][0] === playerOne && board[1][1] === playerOne && board[2][2] === playerOne) {
+    console.log('X Wins')
+    diagWin = true
+  } else if (board[0][0] === playerTwo && board[1][1] === playerTwo && board[2][2] === playerTwo) {
+    console.log('O Wins')
+    diagWin = true
+  } else if (board[0][2] === playerOne && board[1][1] === playerOne && board[2][0] === playerOne) {
+    console.log('X Wins')
+    diagWin = true
+  } else if (board[0][2] === playerTwo && board[1][1] === playerTwo && board[2][0] === playerTwo) {
+    console.log('O Wins')
+    diagWin = true
   }
-  // if () {
-  //   colWin = true
-  // }
-
   // if any are true, return true
-  return rowWin
-  // return rowWin || colWin || diagWin
+  return rowWin || colWin || diagWin
 }
+
 $('.grid-item').click(checkForWins)
 //   for (let i = 0; i < board.length; i++) {
 //     if (board[i][0] === playerOne && board[i][1] === playerOne && board[i][2] === playerOne) {
-
-// for (let i = 0; i < board.length; i++) {
-//   for (let j = 0; j < board[i].length; i++) {
-//     board[i][j] === playerOne
-//   }
-// }
-// let threeInARow = false
-
-//   threeInARow = true
-// }
-
 // if any of these are true return win
 //   return threeInARow || threeinA
 // }
-
-// const createGame = function () {
-//   if (document.getElementsByClassName === playerOne || playerTwo) {
-//     board = [
-//       [' ', ' ', ' '],
-//       [' ', ' ', ' '],
-//       [' ', ' ', ' ']
-//     ]
-//     $('.grid-item').html(' ')
-//     currentMove = ' '
-//     console.log(board)
-//   }
-// }
-// $('#create-game').click(createGame)
 
 const onCreateGame = event => {
   event.preventDefault()
@@ -114,6 +118,9 @@ const onCreateGame = event => {
     ]
     $('.grid-item').html(' ')
     currentMove = ''
+    rowWin = false
+    colWin = false
+    diagWin = false
     console.log(board)
   }
 }

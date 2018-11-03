@@ -17,6 +17,10 @@ $(() => {
     $('.show-hide').toggle()
   })
 
+  $('#sidebar-2').click(function () {
+    $('.show-hide-2').toggle()
+  })
+
   $('#create-game').click(function () {
     $('.toggle-all-games').toggle()
   })

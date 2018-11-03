@@ -17,35 +17,51 @@
   <div class="hero-image">
 
     <div class="toggle">
-      <button id="sidebar">Start Here!</button>
-      <button id="create-game">New Game</button>
-      <button id="game-history">Game History</button>
+      <button id="sidebar">Sign up to play a game!</button>
     </div>
     <div class="show-hide">
       <div id="api-login">
-            <form id="sign-up" class="border">
+            <form id="sign-up" class="border display-first">
               <legend>Sign Up!</legend>
               <input name="credentials[email]" type="text" value="email">
               <input name="credentials[password]" type="password" value="password">
               <input name="credentials[password_confirmation]" type="password" value="confirm password">
               <input type="submit" value="Sign Up!"/>
             </form>
-            <form id="sign-in" class="border">
+            <form id="sign-in" class="border display-first">
               <legend>Sign In!</legend>
               <input name="credentials[email]" type="text" value="email">
               <input name="credentials[password]" type="password" value="password">
               <input type="submit" value="Sign In!"/>
             </form>
-            <form id="change-password" class="border">
+              <p id="message"></p>
+            <!-- <form id="change-password" class="border">
               <legend>Change Password!</legend>
               <input type="password" name="passwords[old]" placeholder="Old Password">
               <input type="password" name="passwords[new]" placeholder="New Password">
-              <input type="submit" value="Change Password!">
-            </form>
-            <p id="message"></p>
-            <button id="sign-out" type="submit">Sign Out!</button>
+              <input type="submit" value="Change Password!"> -->
+                <!-- <p id="message"></p>
+            </form> -->
+          </div>
         </div>
-      </div>
+
+        <div id="toggle-2">
+          <button id="create-game">New Game</button>
+          <button id="game-history">Game History</button>
+          <button id="sidebar-2">Profile</button>
+        </div>
+        <div class="show-hide-2">
+          <div id="api-logout">
+                <form id="change-password" class="border">
+                  <legend>Change Password!</legend>
+                  <input type="password" name="passwords[old]" placeholder="Old Password">
+                  <input type="password" name="passwords[new]" placeholder="New Password">
+                  <input type="submit" value="Change Password!">
+                </form>
+                <button id="sign-out" type="submit">Sign Out!</button>
+                <p id="message-2"></p>
+              </div>
+            </div>
 
     <div class="hero-text">
       <h1 id="title">Tic-Tac-Toe</h1>
