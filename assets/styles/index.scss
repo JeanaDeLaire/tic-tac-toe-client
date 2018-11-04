@@ -1,10 +1,26 @@
 @import '~bootstrap/scss/bootstrap';
 
+button {
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 2px solid rgb(192, 132, 164);
+  color: rgb(102, 131, 152);
+  font-weight: 500;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
 // colors
 // blurple o : R: 127 G: 137 B: 195
 // pink : R: 192 G: 132 B: 164
 // purple: R: 102 G: 97 B: 126
 // Green : R: 102 G: 131 B: 152
+// rgb(127, 137, 195)
+//
+// rgb(102, 97, 126)
+// rgb(102, 131, 152)
+
 .hero-image {
   background-image: url('../public/header.png');
   background-repeat: no-repeat;
@@ -22,7 +38,7 @@
   position: fixed;
 }
 
-#toggle-2 {
+.toggle-2 {
   display: none;
   align-self: flex-end;
   position: fixed;
@@ -73,6 +89,10 @@
   margin-right: 10px;
 }
 
+#sidebar-2 {
+  margin-right: 10px;
+}
+
 .hero-text {
   display: flex;
   color: #fff;
@@ -109,13 +129,16 @@
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  margin: 9vw auto;
-  // margin-bottom: 5vw;
+  margin: 8vw auto;
+  margin-bottom: 2vw;
   height: 80vw;
   width: 80vw;
-  max-width: 600px;
-  max-height: 600px;
-  text-align: center;
+  min-width: 300px;
+  min-height: 300px;
+  max-width: 550px;
+  max-height: 550px;
+  font-size: 3em;
+  font-weight: 700;
   border-radius: 10px;
   border: 3px solid #84828f;
   padding: 15px;
@@ -130,11 +153,16 @@
 // }
 
 .grid-item {
-  font-size: 30px;
-  background-color:	rgba(152, 150, 164, .9);
+  background-color:	rgba(152, 150, 164, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 90px;
+  min-height: 90px;
 }
+
 .grid-item:hover {
-  background-color: white;
+  background-color: rgba(102, 97, 126, 0.5);
 }
 
 #item-a {
@@ -178,4 +206,22 @@
 
 #item-i {
   border-bottom-right-radius: 10px;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid rgb(192, 132, 164);
+  border-radius: 10px;
+  width: 80vw;
+  max-width: 500px;
+  height: 8vw;
+  margin: auto;
+  margin-bottom: 3vw;
+}
+
+.scores {
+  display: flex;
+  color: rgb(102, 131, 152);
 }

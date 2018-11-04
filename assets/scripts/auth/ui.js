@@ -19,13 +19,13 @@ const signUpFailure = error => {
 const signInSuccess = data => {
   console.log(data.user.token)
   store.user = data.user
-  $('#message').text('Signed in successfully')
+  // $('#message').text('Signed in successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
   console.log('signInSuccess ran. Data is :', data)
-  $('#api-login').css('display', 'none')
-  $('#sidebar').css('display', 'none')
-  $('#toggle-2').css('display', 'flex')
+  $('.show-hide').css('display', 'none')
+  $('.toggle').css('display', 'none')
+  $('.toggle-2').css('display', 'flex')
 }
 
 const signInFailure = error => {
@@ -50,12 +50,14 @@ const changePasswordFailure = error => {
 }
 
 const signOutSuccess = data => {
-  // console.log(null.user.token)
-  $('#message-2').text('Signed Out successfully')
+  // $('#message-2').text('Signed Out successfully')
   store.user = null
   $('#message-2').removeClass()
   $('#message-2').addClass('success')
   console.log('signOutSuccess ran. Data is :', data)
+  $('.toggle-2').css('display', 'none')
+  $('.toggle').css('display', 'flex')
+  $('.show-hide-2').css('display', 'none')
 }
 
 const signOutFailure = error => {
