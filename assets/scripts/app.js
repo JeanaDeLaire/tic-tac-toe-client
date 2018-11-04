@@ -10,9 +10,6 @@ const authEvents = require('./auth/events.js')
 const gameEvents = require('./game/events.js')
 
 $(() => {
-  // your JS code goes here
-  // toggle authentication prompts
-
   $('#sidebar').click(function () {
     $('.show-hide').toggle()
   })
@@ -25,90 +22,16 @@ $(() => {
     $('.toggle-all-games').toggle()
   })
 
-  //
-  // win options
-  // board = [
-  //   ['X', 'X', 'X'],
-  //   [' ', ' ', ' '],
-  //   [' ', ' ', ' ']
-  // ]
-  // board = [
-  //   ['O', 'O', 'O'],
-  //   [' ', ' ', ' '],
-  //   [' ', ' ', ' ']
-  // ]
-  //
-  // if (board[0][1][2] = 'X') {
-  //   // x wins
-  // }
-  // board = [
-  //   [' ', ' ', ' '],
-  //   ['X', 'X', 'X'],
-  //   [' ', ' ', ' ']
-  // ]
-  // board = [
-  //   [' ', ' ', ' '],
-  //   ['O', 'O', 'O'],
-  //   [' ', ' ', ' ']
-  // ]
-  // if (board[0]
-  //
-  // board = [
-  //   [' ', ' ', ' '],
-  //   [' ', ' ', ' '],
-  //   ['X', 'X', 'X']
-  // ]
-  // board = [
-  //   [' ', ' ', ' '],
-  //   [' ', ' ', ' '],
-  //   ['O', 'O', 'O']
-  // ]
-  // board = [
-  //   ['X', ' ', ' '],
-  //   ['X', ' ', ' '],
-  //   ['X', ' ', ' ']
-  // ]
-  // board = [
-  //   ['O', ' ', ' '],
-  //   ['O', ' ', ' '],
-  //   ['O', ' ', ' ']
-  // ]
-  // board = [
-  //   [' ', 'X', ' '],
-  //   [' ', 'X', ' '],
-  //   [' ', 'X', ' ']
-  // ]
-  // board = [
-  //   [' ', 'O', ' '],
-  //   [' ', 'O', ' '],
-  //   [' ', 'O', ' ']
-  // ]
-  // board = [
-  //   [' ', ' ', 'X'],
-  //   [' ', ' ', 'X'],
-  //   [' ', ' ', 'X']
-  // ]
-  // board = [
-  //   [' ', ' ', 'O'],
-  //   [' ', ' ', 'O'],
-  //   [' ', ' ', 'O']
-  // ]
-  // board = [
-  //   ['X', ' ', ' '],
-  //   [' ', 'X', ' '],
-  //   [' ', ' ', 'X']
-  // ]
-  // board = [
-  //   ['O', ' ', ' '],
-  //   [' ', 'O', ' '],
-  //   [' ', ' ', 'O']
-  // ]
+  $('#game-history').click(function () {
+    $('.show-hide-3').toggle()
+  })
 
-  // reset the board on a click
-
+  // $('.grid-item').on('click',)
   $('#create-game').on('click', gameEvents.onCreateGameClick)
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
+  $('.grid-item').on('click', gameEvents.onUpdateGame)
+  $('#game-history').on('click', gameEvents.onGameHistory)
 })

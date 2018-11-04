@@ -1,6 +1,6 @@
 'use strict'
 
-// const getFormFields = require('../../../lib/get-form-fields.js')
+const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
 
@@ -13,6 +13,7 @@ let board = [
 const playerOne = 'X'
 const playerTwo = 'O'
 let currentMove = ''
+let id = 1
 let rowWin = false
 let colWin = false
 let diagWin = false
@@ -32,6 +33,7 @@ const play = function (event) {
   const data = {}
   data.index = index
   data.over = false
+  data.id = id
   if (target.is('div') && currentMove % 2 === 0 && target.text() === '' && checkForWins() === false) {
     target.html(playerOne)
     target.css('color', 'rgb(92, 113, 246)')
@@ -53,7 +55,9 @@ const play = function (event) {
     data.over = true
     console.log('game over')
     console.log(data)
-    return data.over
+    // onCreateGame()
+    // return data.over
+    // const data = getFormFields(event.target)
   }
 }
 
@@ -115,44 +119,73 @@ const checkForWins = function () {
   return rowWin || colWin || diagWin
 }
 
-const onCreateGame = event => {
-  event.preventDefault()
-  // const data = {}
+const gameId = function () {
+  if (rowWin || colWin || diagWin) {
+    id++
+  }
+  return id
+}
+// $('#create-game').click(gameId)
+
+const createGame = event => {
+  // const data = getFormFields(event.target)
   // api.createGame(data)
   //   .then(ui.createGameSuccess)
   //   .catch(ui.createGameFailure)
-  // if (document.getElementsByClassName === playerOne || playerTwo) {
-  rowWin = false
-  colWin = false
-  diagWin = false
-  board = [
-    [' ', ' ', ' '],
-    [' ', ' ', ' '],
-    [' ', ' ', ' ']
-  ]
-  $('.grid-item').text('')
-  currentMove = ' '
-  console.log(board)
-  // console.log(data)
-  $('.scores').html('')
+  if (rowWin || colWin || diagWin) {
+    gameId()
+    rowWin = false
+    colWin = false
+    diagWin = false
+    board = [
+      [' ', ' ', ' '],
+      [' ', ' ', ' '],
+      [' ', ' ', ' ']
+    ]
+    $('.grid-item').text('')
+    currentMove = ' '
+    console.log(board)
+    // console.log(data)
+    $('.scores').html('')
+  }
+}
+$('#create-game').click(createGame)
+
+const onCreateGame = event => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.createGame(data)
+    .then(ui.createGameSuccess)
+    .catch(ui.createGameFailure)
 }
 
 $('#create-game').click(onCreateGame)
 
-// const  = function () {
-//   let gameEnd = false
-// if (rowWin  || colWin || diagWin === true)
-// {    gameEnd = true }
-// }
-// $('.grid-item').click(gameOver)
+const onUpdateGame = event => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.updateGame(data)
+    .then(ui.updateGameSuccess)
+    .catch(ui.updateGameFailure)
+}
+
+const onGameHistory = event => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.updateGame(data)
+    .then(ui.gameHistorySuccess)
+    .catch(ui.gameHistoryFailure)
+}
 
 module.exports = {
   board,
   playerOne,
   playerTwo,
+  createGame,
   currentMove,
   play,
   onCreateGame,
-  updateGame,
-  checkForWins
+  onUpdateGame,
+  checkForWins,
+  onGameHistory
 }
