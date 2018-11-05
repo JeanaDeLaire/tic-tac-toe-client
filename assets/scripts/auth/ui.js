@@ -7,6 +7,7 @@ const signUpSuccess = data => {
   $('#message').removeClass()
   $('#message').addClass('success')
   // console.log('signUpSuccess ran. Data is :', data)
+  $('input:text, input:password').val('')
 }
 
 const signUpFailure = error => {
@@ -14,6 +15,7 @@ const signUpFailure = error => {
   $('#message').removeClass()
   $('#message').addClass('failure')
   console.log('signUpFailure ran. Error is :', error)
+  $('input:text, input:password').val('')
 }
 
 const signInSuccess = data => {
@@ -26,6 +28,7 @@ const signInSuccess = data => {
   $('.show-hide').css('display', 'none')
   $('.toggle').css('display', 'none')
   $('.toggle-2').css('display', 'flex')
+  $('input:text, input:password').val('')
 }
 
 const signInFailure = error => {
@@ -33,6 +36,7 @@ const signInFailure = error => {
   $('#message').removeClass()
   $('#message').addClass('failure')
   console.error('signInFailure ran. Error is :', error)
+  $('input:text, input:password').val('')
 }
 
 const changePasswordSuccess = data => {
@@ -40,6 +44,7 @@ const changePasswordSuccess = data => {
   $('#message-2').removeClass()
   $('#message-2').addClass('success')
   // console.log('changePasswordSuccess ran. Data is :', data)
+  $('input:text, input:password').val('')
 }
 
 const changePasswordFailure = error => {
@@ -47,6 +52,7 @@ const changePasswordFailure = error => {
   $('#message-2').removeClass()
   $('#message-2').addClass('failure')
   console.error('changePasswordFailure ran. Error is :', error)
+  $('input:text, input:password').val('')
 }
 
 const signOutSuccess = data => {
@@ -60,6 +66,7 @@ const signOutSuccess = data => {
   $('.show-hide-2').css('display', 'none')
   $('.scoreboard').css('display', 'none')
   $('.grid-container').css('display', 'none')
+  $('input:text, input:password').val('')
 }
 
 const signOutFailure = error => {
@@ -67,6 +74,7 @@ const signOutFailure = error => {
   $('#message-2').removeClass()
   $('#message-2').addClass('failure')
   console.log('signOutFailure ran. Data is :', error)
+  $('input:text, input:password').val('')
 }
 
 module.exports = {
