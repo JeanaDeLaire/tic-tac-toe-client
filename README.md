@@ -1,5 +1,7 @@
 # Tic-Tac-Toe by a Web Development Immersive Student
 
+Live Game: https://jeanadelaire.github.io/tic-tac-toe-client/
+
 Thanks for visiting my web app verson of tic-tac-toe. Did you know that variations of this game have been played for centuries across many cultures? It's catchy name is alleged to originate from some roman game involving moving a few stones across a 3 x 3 game board. Anyways! Let's stop thinking about what life was like before computers and talk specs.
 
 This game utilizes flex-grid to create its responsive gameboard in HTML and CSS. The header image is a bootstrap hero image with a custom background png. Jquery and vanilla javascript make the game interactive with event listeners awaiting click alerts from the gameboard spaces as well as the buttons. The game logic is created through javascript and a 2D array for data organization is present.
