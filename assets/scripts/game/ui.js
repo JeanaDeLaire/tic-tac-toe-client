@@ -7,7 +7,7 @@ const createGameSuccess = data => {
   $('.scores').text('Game On!')
   // $('.scores').removeClass()
   // $('.scores').addClass('success')
-  console.log('createGameSuccess ran. Data is :', data)
+  // console.log('createGameSuccess ran. Data is :', data)
   $('.grid-container').css('display', 'grid')
   $('.scoreboard').css('display', 'flex')
 }
@@ -21,9 +21,9 @@ const createGameFailure = error => {
 
 const updateGameSuccess = data => {
   // $('.scores').prepend('Player moved. ')
-  // $('.scores').removeClass()
-  // $('.scores').addClass('success')
-  console.log('updateGameSuccess ran. Data is:', data)
+  $('.scores').removeClass()
+  $('.scores').addClass('success')
+  // console.log('updateGameSuccess ran. Data is:', data)
 }
 
 const updateGameFailure = error => {
@@ -38,7 +38,7 @@ const gameHistorySuccess = data => {
   $('#allStats').append(scoreData)
   $('#allStats').removeClass()
   $('#allStats').addClass('success')
-  console.log('getHistorySuccess ran. Data is:', data)
+  // console.log('getHistorySuccess ran. Data is:', data)
 }
 
 const gameHistoryFailure = error => {

@@ -9,7 +9,7 @@ curl 'https://tic-tac-toe-wdi.herokuapp.com/games' \
       "index": "'"${INDEX}"'",
       "value": "'"${VALUE}"'"
     },
-    "over": f"'"${OVER}"'"
+    "over": "'"${OVER}"'"
   }
 }'
 

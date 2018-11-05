@@ -22,7 +22,6 @@ const onSignIn = event => {
 
 const onSignOut = event => {
   event.preventDefault()
-  console.log('sign out present!')
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)

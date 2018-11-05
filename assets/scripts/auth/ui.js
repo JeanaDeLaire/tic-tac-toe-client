@@ -6,7 +6,7 @@ const signUpSuccess = data => {
   $('#message').text('Signed up successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
-  console.log('signUpSuccess ran. Data is :', data)
+  // console.log('signUpSuccess ran. Data is :', data)
 }
 
 const signUpFailure = error => {
@@ -17,12 +17,12 @@ const signUpFailure = error => {
 }
 
 const signInSuccess = data => {
-  console.log(data.user.token)
+  // console.log(data.user.token)
   store.user = data.user
   // $('#message').text('Signed in successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
-  console.log('signInSuccess ran. Data is :', data)
+  // console.log('signInSuccess ran. Data is :', data)
   $('.show-hide').css('display', 'none')
   $('.toggle').css('display', 'none')
   $('.toggle-2').css('display', 'flex')
@@ -39,7 +39,7 @@ const changePasswordSuccess = data => {
   $('#message-2').text('Password changed successfully')
   $('#message-2').removeClass()
   $('#message-2').addClass('success')
-  console.log('changePasswordSuccess ran. Data is :', data)
+  // console.log('changePasswordSuccess ran. Data is :', data)
 }
 
 const changePasswordFailure = error => {
@@ -54,7 +54,7 @@ const signOutSuccess = data => {
   store.user = null
   $('#message-2').removeClass()
   $('#message-2').addClass('success')
-  console.log('signOutSuccess ran. Data is :', data)
+  // console.log('signOutSuccess ran. Data is :', data)
   $('.toggle-2').css('display', 'none')
   $('.toggle').css('display', 'flex')
   $('.show-hide-2').css('display', 'none')

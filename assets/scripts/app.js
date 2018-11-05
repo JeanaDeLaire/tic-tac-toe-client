@@ -26,12 +26,10 @@ $(() => {
     $('.show-hide-3').toggle()
   })
 
-  // $('.grid-item').on('click',)
-  // $('#create-game').on('click', gameEvents.onCreateGameClick)
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
   $('.grid-item').on('click', gameEvents.onUpdateGame)
-  $('#game-history').on('click', gameEvents.onGameHistory)
+  $('.grid-item').on('click', gameEvents.onGameHistory)
 })
