@@ -13,14 +13,10 @@ let board = [
 const playerOne = 'X'
 const playerTwo = 'O'
 let currentMove = ''
-let id = 1
 let rowWin = false
 let colWin = false
 let diagWin = false
-
-const updateGame = event => {
-  event.preventDefault()
-}
+const data = {}
 
 // Game Logic
 // when user clicks on box, place an x first then an o and alternate
@@ -30,17 +26,23 @@ const play = function (event) {
   const c = $(event.target).data('c')
   const target = $(event.target)
   const index = c + (r * 3)
-  const data = {}
   data.index = index
   data.over = false
-  data.id = id
+  // const checkForTie = () => {
+  //   // const flatBoard = board.flat()
+  //   // return flatBoard.every(cell => cell !== '')
+  //   const flatBoard = []
+  //   flatBoard.concat(...board)
+  //   return flatBoard.every(cell => cell !== ' ')
+  // }
   if (target.is('div') && currentMove % 2 === 0 && target.text() === '' && checkForWins() === false) {
     target.html(playerOne)
     target.css('color', 'rgb(92, 113, 246)')
     board[r][c] = playerOne
     console.log(board)
     currentMove++
-    data.player = playerOne
+    data.value = playerOne
+    $('.scores').text('Player O is up.')
     console.log(data)
   } else if (target.is('div') && !currentMove % 2 === 0 && target.text() === '' && checkForWins() === false) {
     target.html(playerTwo)
@@ -48,20 +50,32 @@ const play = function (event) {
     board[r][c] = playerTwo
     console.log(board)
     currentMove++
-    data.player = playerTwo
+    data.value = playerTwo
+    $('.scores').text()
+    $('.scores').text('Player X is up.')
     console.log(data)
     // if checkForWins returns true pass over data
+    // if board indexes
   } if (checkForWins() === true) {
     data.over = true
     console.log('game over')
-    console.log(data)
-    // onCreateGame()
+    // console.log(data)
     // return data.over
-    // const data = getFormFields(event.target)
+  } else if (board.every(row => row.every(cell => cell !== ' '))) {
+    data.over = true
+    $('.scores').html("It's a draw!")
   }
-}
 
-// when divs with the class grid-item are clicked run the play function
+//   (board.every(row => row.every(cell => cell !== '')))
+//
+// //   let empty = true
+// // for (let r = 0; board[r].length; i++)
+// // for (let c = 0; board[r][c].length; i++)
+//
+//    {
+//     $('.scores').html("It's a draw!")
+//   }
+}
 $('.grid-item').click(play)
 
 const checkForWins = function () {
@@ -119,36 +133,29 @@ const checkForWins = function () {
   return rowWin || colWin || diagWin
 }
 
-const gameId = function () {
-  if (rowWin || colWin || diagWin) {
-    id++
-  }
-  return id
-}
-// $('#create-game').click(gameId)
-
 const createGame = event => {
   // const data = getFormFields(event.target)
   // api.createGame(data)
   //   .then(ui.createGameSuccess)
   //   .catch(ui.createGameFailure)
-  if (rowWin || colWin || diagWin) {
-    gameId()
-    rowWin = false
-    colWin = false
-    diagWin = false
-    board = [
-      [' ', ' ', ' '],
-      [' ', ' ', ' '],
-      [' ', ' ', ' ']
-    ]
-    $('.grid-item').text('')
-    currentMove = ' '
-    console.log(board)
-    // console.log(data)
-    $('.scores').html('')
-  }
+  // if (rowWin || colWin || diagWin) {
+  // gameId()
+  rowWin = false
+  colWin = false
+  diagWin = false
+  board = [
+    [' ', ' ', ' '],
+    [' ', ' ', ' '],
+    [' ', ' ', ' ']
+  ]
+  $('.grid-item').text('')
+  currentMove = ' '
+  console.log(board)
+  // console.log(data)
+  $('.scores').html('')
+  // }
 }
+
 $('#create-game').click(createGame)
 
 const onCreateGame = event => {
@@ -163,7 +170,11 @@ $('#create-game').click(onCreateGame)
 
 const onUpdateGame = event => {
   event.preventDefault()
-  const data = getFormFields(event.target)
+  const target = $(event.target)
+  if (target.text !== '') {
+    return
+  }
+  // const data = getFormFields(event.target)
   api.updateGame(data)
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameFailure)
@@ -171,7 +182,7 @@ const onUpdateGame = event => {
 
 const onGameHistory = event => {
   event.preventDefault()
-  const data = getFormFields(event.target)
+  // const data = getFormFields(event.target)
   api.updateGame(data)
     .then(ui.gameHistorySuccess)
     .catch(ui.gameHistoryFailure)

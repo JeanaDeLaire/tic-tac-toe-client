@@ -58,6 +58,8 @@ const signOutSuccess = data => {
   $('.toggle-2').css('display', 'none')
   $('.toggle').css('display', 'flex')
   $('.show-hide-2').css('display', 'none')
+  $('.scoreboard').css('display', 'none')
+  $('.grid-container').css('display', 'none')
 }
 
 const signOutFailure = error => {
