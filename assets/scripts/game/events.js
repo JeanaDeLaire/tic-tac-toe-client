@@ -50,11 +50,11 @@ const play = function (event) {
   } if (checkForWins() === true) {
     data.over = true
     // console.log('game over')
-    // return data.over
+    return data.over
   } else if (board.every(row => row.every(cell => cell !== ' '))) {
     data.over = true
     $('.scores').html("It's a draw!")
-    // return data.over
+    return data.over
   }
 }
 $('.grid-item').click(play)
@@ -141,10 +141,22 @@ const onUpdateGame = event => {
 
 const onGameHistory = event => {
   event.preventDefault()
-  api.updateGame(data)
+  api.gameHistory(data)
     .then(ui.gameHistorySuccess)
     .catch(ui.gameHistoryFailure)
 }
+
+// const showGameHistory = event => {
+// event.preventDefault()
+//   if data.over ==== true
+//   //display all the content in a table
+//  data.cells[] ===
+// push table to $('#allStats')
+// api.updateGame(data)
+//   .then(ui.gameHistorySuccess)
+//   .catch(ui.gameHistoryFailure)
+// else if
+// return data
 
 module.exports = {
   board,

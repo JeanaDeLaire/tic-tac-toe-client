@@ -31,5 +31,5 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
   $('.grid-item').on('click', gameEvents.onUpdateGame)
-  $('.grid-item').on('click', gameEvents.onGameHistory)
+  $('#game-history').on('click', gameEvents.onGameHistory)
 })

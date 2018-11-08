@@ -40,7 +40,15 @@ const gameHistory = data => {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data
+    data: {
+      game: {
+        cell: {
+          index: data.index,
+          value: data.value
+        },
+        over: data.over
+      }
+    }
   })
 }
 

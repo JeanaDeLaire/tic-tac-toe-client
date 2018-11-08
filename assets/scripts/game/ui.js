@@ -33,19 +33,31 @@ const updateGameFailure = error => {
   console.log('updateGameFailure ran. Data is:', error)
 }
 
+// const gameHistorySuccess = data => {
+//   console.log(data)
+//   const scoreData = JSON.stringify(data)
+//   $('#allStats').append(scoreData)
+//   $('#allStats').removeClass()
+//   $('#allStats').addClass('success')
+//   console.log(data.game.cells)
+// }
+
 const gameHistorySuccess = data => {
-  const scoreData = JSON.stringify(data)
-  $('#allStats').append(scoreData)
-  $('#allStats').removeClass()
-  $('#allStats').addClass('success')
-  // console.log('getHistorySuccess ran. Data is:', data)
+  for (let i = 0; i < data.games.length; i++) {
+    if (data.games[i].over === true) {
+      const scoreData = JSON.stringify(data.games[i].cells)
+      // console.log(data.games[i].cells)
+      $('#allStats').append(scoreData)
+      $('#allStats').removeClass()
+      $('#allStats').addClass('success')
+    }
+  }
 }
 
-const gameHistoryFailure = error => {
+const gameHistoryFailure = () => {
   $('.scores').text('Request failed')
   $('.scores').removeClass()
   $('.scores').addClass('failure')
-  console.log('getHistoryFailure ran. Data is:', error)
 }
 
 module.exports = {

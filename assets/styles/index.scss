@@ -101,6 +101,10 @@ button {
   border-radius: 10px;
 }
 
+#sign-in-hide {
+  display: none;
+}
+
 #allStats {
   border: 1px solid black;
 }
@@ -162,13 +166,13 @@ button {
   display: none;
   grid-template-columns: auto auto auto;
   margin: 8vw auto;
-  margin-bottom: 2vw;
+  margin-bottom: 15px;
   height: 80vw;
   width: 80vw;
   min-width: 300px;
   min-height: 300px;
-  max-width: 550px;
-  max-height: 550px;
+  max-width: 530px;
+  max-height: 530px;
   font-size: 3em;
   font-weight: 700;
   border-radius: 10px;
@@ -246,14 +250,15 @@ button {
   align-items: center;
   border: 3px solid rgb(192, 132, 164);
   border-radius: 10px;
-  width: 80vw;
-  max-width: 500px;
-  height: 8vw;
+  width: 60vw;
+  max-width: 400px;
+  height: 6vw;
   margin: auto;
-  margin-bottom: 3vw;
+  margin-bottom: 4vw;
 }
 
 .scores {
   display: flex;
   color: rgb(102, 131, 152);
+  font-size: 3vw;
 }
