@@ -23,7 +23,7 @@ const updateGameSuccess = data => {
   // $('.scores').prepend('Player moved. ')
   $('.scores').removeClass()
   $('.scores').addClass('success')
-  // console.log('updateGameSuccess ran. Data is:', data)
+  console.log('updateGameSuccess ran. Data is:', data)
 }
 
 const updateGameFailure = error => {
@@ -43,16 +43,32 @@ const updateGameFailure = error => {
 // }
 
 const gameHistorySuccess = data => {
-  for (let i = 0; i < data.games.length; i++) {
-    if (data.games[i].over === true) {
-      const scoreData = JSON.stringify(data.games[i].cells)
-      // console.log(data.games[i].cells)
-      $('#allStats').append(scoreData)
-      $('#allStats').removeClass()
-      $('#allStats').addClass('success')
-    }
-  }
+  console.log(data.games)
+  const filteredGames = data.games.filter(el => el.over === true)
+  console.log(filteredGames)
+  filteredGames.forEach(el => {
+    const scoreData = JSON.stringify(el.cells)
+    $('#allStats').append(scoreData)
+    $('#allStats').removeClass()
+    $('#allStats').addClass('success')
+  })
 }
+
+// const gameHistorySuccess = data => {
+//   const old = []
+//   for (let i = 0; i < data.games.length; i++) {
+//     for (let i = 0; i < data.games[i].cells.length; i += 3) {
+//       old.push(data.games[i].cells.slice(i, i + 3))
+//     } if (data.games[i].over === true) {
+//       const scoreData = JSON.stringify(old)
+//       // console.log(data.games[i].cells)
+//       $('#allStats').append(scoreData)
+//       $('#allStats').removeClass()
+//       $('#allStats').addClass('success')
+//       console.log(scoreData)
+//     }
+//   }
+// }
 
 const gameHistoryFailure = () => {
   $('.scores').text('Request failed')
