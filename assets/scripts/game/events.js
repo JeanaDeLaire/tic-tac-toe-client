@@ -33,7 +33,6 @@ const play = function (event) {
     target.html(playerOne)
     target.css('color', 'rgb(92, 113, 246)')
     board[r][c] = playerOne
-    console.log(board)
     currentMove++
     data.value = playerOne
     $('.scores').text('Player O is up.')
@@ -130,10 +129,6 @@ $('#create-game').click(onCreateGame)
 
 const onUpdateGame = event => {
   event.preventDefault()
-  const target = $(event.target)
-  if (target.text !== '') {
-    // return
-  }
   api.updateGame(data)
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameFailure)

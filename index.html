@@ -21,14 +21,14 @@
     </div>
     <div class="show-hide">
       <div id="api-login">
-            <form id="sign-up" class="border display-first">
+            <form id="sign-up">
               <legend>Sign Up!</legend>
               <input name="credentials[email]" type="text" placeholder="email">
               <input name="credentials[password]" type="password" placeholder="password">
               <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
               <input type="submit" value="Sign Up!"/>
             </form>
-            <form id="sign-in" class="border display-first">
+            <form id="sign-in">
               <legend>Sign In!</legend>
               <input name="credentials[email]" type="text" placeholder="email">
               <input name="credentials[password]" type="password" placeholder="password">
@@ -47,13 +47,13 @@
         <div class="show-hide-3">
           <div id="api-game">
             <h4>Game Logs</h4>
-            <p id="allStats"></p>
+            <div id="allStats"></div>
           </div>
         </div>
 
         <div class="show-hide-2">
           <div id="api-logout">
-                <form id="change-password" class="border">
+                <form id="change-password">
                   <legend>Change Password!</legend>
                   <input type="password" name="passwords[old]" type="password" placeholder="Old Password">
                   <input type="password" name="passwords[new]" type="password" placeholder="New Password">

@@ -21,8 +21,8 @@ const createGameFailure = error => {
 
 const updateGameSuccess = data => {
   // $('.scores').prepend('Player moved. ')
-  $('.scores').removeClass()
-  $('.scores').addClass('success')
+  // $('.scores').removeClass()
+  // $('.scores').addClass('success')
   console.log('updateGameSuccess ran. Data is:', data)
 }
 
@@ -34,40 +34,39 @@ const updateGameFailure = error => {
 }
 
 // const gameHistorySuccess = data => {
-//   console.log(data)
-//   const scoreData = JSON.stringify(data)
-//   $('#allStats').append(scoreData)
-//   $('#allStats').removeClass()
-//   $('#allStats').addClass('success')
-//   console.log(data.game.cells)
+//   const filteredGames = data.games.filter(el => el.over === true)
+//   console.log(filteredGames)
+//   filteredGames.forEach(el => {
+//     const scoreData = JSON.stringify(el.cells)
+//     $('#allStats').append(scoreData)
+//     $('#allStats').removeClass()
+//     $('#allStats').addClass('success')
+//   })
 // }
 
 const gameHistorySuccess = data => {
-  console.log(data.games)
   const filteredGames = data.games.filter(el => el.over === true)
   console.log(filteredGames)
+  // console.log(filteredGames[0].cells)
   filteredGames.forEach(el => {
-    const scoreData = JSON.stringify(el.cells)
-    $('#allStats').append(scoreData)
+    const cellHtml = el.cells.map(i => {
+      return `<div class="little-cell">${i}</div>`
+    })
+    const littleBoard = `<div class="little-board">${cellHtml.join('')}</div>`
+    console.log(littleBoard)
+    $('#allStats').append(littleBoard)
     $('#allStats').removeClass()
     $('#allStats').addClass('success')
   })
 }
 
-// const gameHistorySuccess = data => {
-//   const old = []
-//   for (let i = 0; i < data.games.length; i++) {
-//     for (let i = 0; i < data.games[i].cells.length; i += 3) {
-//       old.push(data.games[i].cells.slice(i, i + 3))
-//     } if (data.games[i].over === true) {
-//       const scoreData = JSON.stringify(old)
-//       // console.log(data.games[i].cells)
-//       $('#allStats').append(scoreData)
-//       $('#allStats').removeClass()
-//       $('#allStats').addClass('success')
-//       console.log(scoreData)
-//     }
-//   }
+// const makeBoard = function (data) {
+//   const filteredGames = data.games.filter(el => el.over === true)
+//   const cellHtml = filteredGames.map(el => {
+//     return `<div clas="little-cell">${el}</div>`
+//   })
+//   const littleBoard = `<div class="little-board">${cellHtml.join()}</div>`
+// console.log(littleBoard)
 // }
 
 const gameHistoryFailure = () => {
