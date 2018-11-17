@@ -35,6 +35,7 @@ const play = function (event) {
     board[r][c] = playerOne
     currentMove++
     data.value = playerOne
+    $('.scores').text('')
     $('.scores').text('Player O is up.')
   } else if (target.is('div') && !currentMove % 2 === 0 && target.text() === '' && checkForWins() === false) {
     target.html(playerTwo)
@@ -43,7 +44,7 @@ const play = function (event) {
     // console.log(board)
     currentMove++
     data.value = playerTwo
-    $('.scores').text()
+    $('.scores').text('')
     $('.scores').text('Player X is up.')
     // if checkForWins returns true pass over data
   } if (checkForWins() === true) {
@@ -140,18 +141,6 @@ const onGameHistory = event => {
     .then(ui.gameHistorySuccess)
     .catch(ui.gameHistoryFailure)
 }
-
-// const showGameHistory = event => {
-// event.preventDefault()
-//   if data.over ==== true
-//   //display all the content in a table
-//  data.cells[] ===
-// push table to $('#allStats')
-// api.updateGame(data)
-//   .then(ui.gameHistorySuccess)
-//   .catch(ui.gameHistoryFailure)
-// else if
-// return data
 
 module.exports = {
   board,

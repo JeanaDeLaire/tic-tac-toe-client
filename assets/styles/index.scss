@@ -74,12 +74,18 @@ button {
 #allStats {
   border: 1px solid black;
   overflow-y: auto;
-  max-height: 300px;
+  max-height: 350px;
   min-width: 200px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding-top: 25px;
+}
+
+.game-history {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
 }
 
 #api-logout {
@@ -288,16 +294,23 @@ button {
   grid-template-columns: auto auto auto;
   // justify-content: center;
   // align-items: center;
-  margin-bottom: 250px;
-  width: 200px;
-  height: 200px;
+  margin-bottom: 175px;
+  width: 150px;
+  height: 150px;
   border: 1px solid black;
 }
 
 .little-cell {
-  color: red;
+  color: rgb(192, 132, 164);
   display: inline-grid;
   // justify-content: center;
   // align-items: center;
-  border: 1px solid black;
+  border: 1px solid rgb(102, 131, 152);
 }
+
+// @media screen and (max-width: 400px) {
+//   .show-hide {
+//     width: 400px;
+//     height: 400px;
+//   }
+// }
