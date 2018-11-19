@@ -36,7 +36,7 @@ const play = function (event) {
     currentMove++
     data.value = playerOne
     $('.scores').text('')
-    $('.scores').text('Player O is up.')
+    $('.scores').text('Player O is up')
   } else if (target.is('div') && !currentMove % 2 === 0 && target.text() === '' && checkForWins() === false) {
     target.html(playerTwo)
     target.css('color', 'rgb(109, 71, 134)')
@@ -45,7 +45,7 @@ const play = function (event) {
     currentMove++
     data.value = playerTwo
     $('.scores').text('')
-    $('.scores').text('Player X is up.')
+    $('.scores').text('Player X is up')
     // if checkForWins returns true pass over data
   } if (checkForWins() === true) {
     data.over = true
@@ -53,7 +53,7 @@ const play = function (event) {
     return data.over
   } else if (board.every(row => row.every(cell => cell !== ' '))) {
     data.over = true
-    $('.scores').html("It's a draw!")
+    $('.scores').html("It's a draw. :/ ")
     return data.over
   }
 }
@@ -62,40 +62,40 @@ $('.grid-item').click(play)
 const checkForWins = function () {
   if (rowWin || colWin || diagWin) { return }
   if (board.some(row => row.every(el => el === playerOne))) {
-    $('.scores').html('X wins! Start a new game.')
+    $('.scores').html('X wins! Start a new game')
     rowWin = true
   } else if (board.some(row => row.every(el => el === playerTwo))) {
-    $('.scores').html('O wins! Start a new game.')
+    $('.scores').html('O wins! Start a new game')
     rowWin = true
   } else if (board[0][0] === playerOne && board[1][0] === playerOne && board[2][0] === playerOne) {
-    $('.scores').html('X wins! Start a new game.')
+    $('.scores').html('X wins! Start a new game')
     colWin = true
   } else if (board[0][1] === playerOne && board[1][1] === playerOne && board[2][1] === playerOne) {
-    $('.scores').html('X wins! Start a new game.')
+    $('.scores').html('X wins! Start a new game')
     colWin = true
   } else if (board[0][2] === playerOne && board[1][2] === playerOne && board[2][2] === playerOne) {
-    $('.scores').html('X wins! Start a new game.')
+    $('.scores').html('X wins! Start a new game')
     colWin = true
   } else if (board[0][0] === playerTwo && board[1][0] === playerTwo && board[2][0] === playerTwo) {
-    $('.scores').html('O wins! Start a new game.')
+    $('.scores').html('O wins! Start a new game')
     colWin = true
   } else if (board[0][1] === playerTwo && board[1][1] === playerTwo && board[2][1] === playerTwo) {
-    $('.scores').html('O wins! Start a new game.')
+    $('.scores').html('O wins! Start a new game')
     colWin = true
   } else if (board[0][2] === playerTwo && board[1][2] === playerTwo && board[2][2] === playerTwo) {
-    $('.scores').html('O wins! Start a new game.')
+    $('.scores').html('O wins! Start a new game')
     colWin = true
   } else if (board[0][0] === playerOne && board[1][1] === playerOne && board[2][2] === playerOne) {
-    $('.scores').html('X wins! Start a new game.')
+    $('.scores').html('X wins! Start a new game')
     diagWin = true
   } else if (board[0][0] === playerTwo && board[1][1] === playerTwo && board[2][2] === playerTwo) {
-    $('.scores').html('O wins! Start a new game.')
+    $('.scores').html('O wins! Start a new game')
     diagWin = true
   } else if (board[0][2] === playerOne && board[1][1] === playerOne && board[2][0] === playerOne) {
-    $('.scores').html('X wins! Start a new game.')
+    $('.scores').html('X wins! Start a new game')
     diagWin = true
   } else if (board[0][2] === playerTwo && board[1][1] === playerTwo && board[2][0] === playerTwo) {
-    $('.scores').html('O wins! Start a new game.')
+    $('.scores').html('O wins! Start a new game')
     diagWin = true
   }
   // if any are true, return true

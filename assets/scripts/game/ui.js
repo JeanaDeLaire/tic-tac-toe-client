@@ -16,10 +16,9 @@ const createGameFailure = () => {
 }
 
 const updateGameSuccess = data => {
-  // $('.scores').val('underline')
-  // $('.scores').removeClass()
-  // $('.scores').addClass('success')
-  return
+  $('.scores').append('!')
+  // $('.scores').delay(1000).fadeOut(100).fadeIn(200).fadeOut(100).fadeIn(200)
+  $('.scores').addClass('success')
 }
 
 const updateGameFailure = () => {
@@ -37,7 +36,7 @@ const gameHistorySuccess = data => {
       return `<div class="little-cell">${i}</div>`
     })
     const littleBoard = `<div class="little-board">${cellHtml.join('')}</div>`
-    $('.game-history').text("You've completed " + totalOverGames + ' games.')
+    $('.game-history').text('Games completed: ' + totalOverGames)
     $('#allStats').append(littleBoard)
     $('#allStats').removeClass()
     $('#allStats').addClass('success')
