@@ -224,6 +224,7 @@ button {
   height: 6vw;
   margin: auto;
   margin-bottom: 4vw;
+  padding: 30px;
 }
 
 .scores {
@@ -254,7 +255,7 @@ button {
 @media (max-width: 750px) {
   .scores {
     padding-top: 5px;
-    font-size: 32px;
+    font-size: 30px;
   }
 
   #api-login {
@@ -274,5 +275,10 @@ button {
     margin-left: 0;
     margin-right: 0;
     max-width: 100vw;
+  }
+
+  #title {
+    margin-top: 20px;
+    font-size: 10vw;
   }
 }
