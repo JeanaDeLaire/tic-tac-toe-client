@@ -4,6 +4,12 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
 
+// when events are triggered (clicked) follow through the correct steps
+// prevent page from reloading
+// obtain data to send to api
+// call functions to post, patch, get, and delete information based on need
+// give user feedback
+
 const onSignUp = event => {
   event.preventDefault()
   const data = getFormFields(event.target)

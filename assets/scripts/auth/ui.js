@@ -1,59 +1,63 @@
 'use strict'
 
+// authentication CRUD user feedback
+
 const store = require('../store.js')
 
+// show message at bottom of sign up form alerting success
+// clear form
 const signUpSuccess = data => {
   $('#message').text('Signed up successfully')
-  $('#message').removeClass()
-  $('#message').addClass('success')
   $('input:text, input:password').val('')
 }
 
+// show message at bottom of sign up form alerting sign up failure
 const signUpFailure = () => {
   $('#message').text('Error on sign up')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
   $('input:text, input:password').val('')
 }
 
+// if sign in is successful hide the form and show navbar with game options
+// clear form
 const signInSuccess = data => {
   store.user = data.user
-  $('#message').removeClass()
-  $('#message').addClass('success')
   $('.show-hide').css('display', 'none')
   $('.toggle').css('display', 'none')
   $('.toggle-2').css('display', 'flex')
   $('input:text, input:password').val('')
 }
 
+// alert user if sign in fails
+// clear form
 const signInFailure = () => {
   $('#message').text('Error on sign in')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
   $('input:text, input:password').val('')
 }
 
+// inform user when pw change is successful
+// clear form
 const changePasswordSuccess = data => {
   $('#message-2').text('Password changed successfully')
-  $('#message-2').removeClass()
-  $('#message-2').addClass('success')
   $('input:text, input:password').val('')
 }
 
+// inform user if pw change fails
+// clear form
 const changePasswordFailure = () => {
   $('#message-2').text('Error on password change')
-  $('#message-2').removeClass()
-  $('#message-2').addClass('failure')
   $('input:text, input:password').val('')
 }
 
+// when the user signs out close all sign in displays
+// hide Navbar
+// hide the Gameboard
+// show them the option to sign in again
 const signOutSuccess = data => {
   store.user = null
-  $('#message-2').removeClass()
-  $('#message-2').addClass('success')
   $('.toggle-2').css('display', 'none')
   $('.toggle').css('display', 'flex')
   $('.show-hide-2').css('display', 'none')
+  $('.show-hide-3').css('display', 'none')
   $('.scoreboard').css('display', 'none')
   $('.grid-container').css('display', 'none')
   $('input:text, input:password').val('')
@@ -61,10 +65,9 @@ const signOutSuccess = data => {
   $('#message').text('')
 }
 
+// if sign out fails inform user.
 const signOutFailure = () => {
   $('#message-2').text('Sign Out failed')
-  $('#message-2').removeClass()
-  $('#message-2').addClass('failure')
   $('input:text, input:password').val('')
 }
 

@@ -1,5 +1,7 @@
 'use strict'
 
+// game CRUD user feedback
+
 const store = require('../store.js')
 
 // display the gameboard when a signed in user clicks on new game

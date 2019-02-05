@@ -3,6 +3,8 @@
 const config = require('../config.js')
 const store = require('../store.js')
 
+// authentication CRUD actions with api routes
+
 const signUp = data => {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
