@@ -10,6 +10,7 @@ const authEvents = require('./auth/events.js')
 const gameEvents = require('./game/events.js')
 
 $(() => {
+  // triggers sign up auth form on click
   $('#sidebar').click(function () {
     $('.show-hide').toggle()
   })

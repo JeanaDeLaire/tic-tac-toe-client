@@ -14,91 +14,85 @@
     </head>
     <body>
 
-  <!-- <div class="header-image" style="background-image: url('../public/header.png');"> -->
-<div class="header-image" style="background-image: url('public/headerimg.png');">
-    <div class="toggle">
-      <button id="sidebar">Sign up to play!</button>
-    </div>
-    <div class="show-hide">
-      <div id="api-login">
-            <form id="sign-up">
-              <legend>Sign Up!</legend>
-              <input name="credentials[email]" type="text" placeholder="email">
-              <input name="credentials[password]" type="password" placeholder="password">
-              <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
-              <input type="submit" value="Sign Up!"/>
-            </form>
-            <form id="sign-in">
-              <legend>Sign In!</legend>
-              <input name="credentials[email]" type="text" placeholder="email">
-              <input name="credentials[password]" type="password" placeholder="password">
-              <input type="submit" value="Sign In!"/>
-            </form>
-              <p id="message"></p>
-          </div>
-        </div>
-
-        <div class="toggle-2">
-          <button id="create-game">New Game</button>
-          <button id="game-history">Game History</button>
-          <button id="sidebar-2">Profile</button>
-        </div>
-
-        <div class="show-hide-3">
-          <div id="api-game">
-            <h4 class="game-history"></h4>
-            <div id="allStats">
-            </div>
-          </div>
-        </div>
-
-        <div class="show-hide-2">
-          <div id="api-logout">
-                <form id="change-password">
-                  <legend>Change Password!</legend>
-                  <input type="password" name="passwords[old]" type="password" placeholder="Old Password">
-                  <input type="password" name="passwords[new]" type="password" placeholder="New Password">
-                  <input type="submit" value="Change Password!">
-                </form>
-                <button id="sign-out" type="submit">Sign Out!</button>
-                <p id="message-2"></p>
-            </div>
+        <!-- header image -->
+      <div class="header-image" style="background-image: url('public/headerimg.png');">
+          <div class="toggle">
+            <button id="sidebar">Sign up to play!</button>
           </div>
 
-    <div class="hero-text">
-      <h1 id="title">Tic-Tac-Toe</h1>
-    </div>
-</div>
-<!--
-<div class="fight"> -->
-  <!-- <div id="x-animation"><img class="x-fight animation" src="../public/xAnimation.png" alt="X Image"></div> -->
-    <!-- <div id="x-sword"><img id="x-swords" src="../public/xSword.png" alt="X sword"></div> -->
-  <!-- <div id="o-sword"><img id="o-swords" src="../public/oSword.png" alt="O sword"></div> -->
-  <!-- <div id="o-animation"><img class="o-fight animation" src="../public/oAnimation.png" alt="O Image"></div>
-  </div> -->
+          <!-- Signup Auth -->
+          <div class="show-hide">
+            <div id="api-login">
+                  <form id="sign-up">
+                    <legend>Sign Up!</legend>
+                    <input name="credentials[email]" type="text" placeholder="email">
+                    <input name="credentials[password]" type="password" placeholder="password">
+                    <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+                    <input class="btn btn-primary" type="submit" value="Sign Up!"/>
+                  </form>
+                  <form id="sign-in">
+                    <legend>Sign In!</legend>
+                    <input name="credentials[email]" type="text" placeholder="email">
+                    <input name="credentials[password]" type="password" placeholder="password">
+                    <input class="btn btn-primary" type="submit" value="Sign In!"/>
+                  </form>
+                    <p id="message"></p>
+                </div>
+              </div>
 
-<div class="grid-container">
-  <div class="grid-item" id="item-a" data-r=0 data-c=0><h1 class="grid-text"></h1></div>
-  <div class="grid-item" id="item-b" data-r=0 data-c=1><h1 class="grid-text"></h1></div>
-  <div class="grid-item" id="item-c" data-r=0 data-c=2><h1 class="grid-text"></h1></div>
-  <div class="grid-item" id="item-d" data-r=1 data-c=0><h1 class="grid-text"></h1></div>
-  <div class="grid-item" id="item-e" data-r=1 data-c=1><h1 class="grid-text"></h1></div>
-  <div class="grid-item" id="item-f" data-r=1 data-c=2><h1 class="grid-text"></h1></div>
-  <div class="grid-item" id="item-g" data-r=2 data-c=0><h1 class="grid-text"></h1></div>
-  <div class="grid-item" id="item-h" data-r=2 data-c=1><h1 class="grid-text"></h1></div>
-  <div class="grid-item" id="item-i" data-r=2 data-c=2><h1 class="grid-text"></h1></div>
-</div>
+              <!-- Signed in Navbar -->
+              <div class="toggle-2">
+                <button id="create-game">New Game</button>
+                <button id="game-history">Game History</button>
+                <button id="sidebar-2">Profile</button>
+              </div>
 
-<div class="scoreboard">
-<h2 class="scores"></h2>
-</div>
-<!-- <div>
-<button id="create-game">New Game</button>
-<button id="game-history">Game History</button>
-<div class="game-alerts">
-  <p id="stats"></p>
-</div>
-</div> -->
+              <!-- Game History -->
+              <div class="show-hide-3">
+                <div id="api-game">
+                  <h4 class="game-history"></h4>
+                  <div id="allStats">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Change Password & Signout  -->
+              <div class="show-hide-2">
+                <div id="api-logout">
+                      <form id="change-password">
+                        <legend>Change Password!</legend>
+                        <input type="password" name="passwords[old]" type="password" placeholder="Old Password">
+                        <input type="password" name="passwords[new]" type="password" placeholder="New Password">
+                        <input class="btn btn-primary" type="submit" value="Change Password!">
+                      </form>
+                      <button id="sign-out" type="submit">Sign Out!</button>
+                      <p id="message-2"></p>
+                  </div>
+                </div>
+
+                <!-- Header Title -->
+          <div class="hero-text">
+            <h1 id="title">Tic-Tac-Toe</h1>
+          </div>
+      </div>
+
+      <!-- Gameboard -->
+      <div class="grid-container">
+        <div class="grid-item" id="item-a" data-r=0 data-c=0><h1 class="grid-text"></h1></div>
+        <div class="grid-item" id="item-b" data-r=0 data-c=1><h1 class="grid-text"></h1></div>
+        <div class="grid-item" id="item-c" data-r=0 data-c=2><h1 class="grid-text"></h1></div>
+        <div class="grid-item" id="item-d" data-r=1 data-c=0><h1 class="grid-text"></h1></div>
+        <div class="grid-item" id="item-e" data-r=1 data-c=1><h1 class="grid-text"></h1></div>
+        <div class="grid-item" id="item-f" data-r=1 data-c=2><h1 class="grid-text"></h1></div>
+        <div class="grid-item" id="item-g" data-r=2 data-c=0><h1 class="grid-text"></h1></div>
+        <div class="grid-item" id="item-h" data-r=2 data-c=1><h1 class="grid-text"></h1></div>
+        <div class="grid-item" id="item-i" data-r=2 data-c=2><h1 class="grid-text"></h1></div>
+      </div>
+
+      <!-- Scoreboard -->
+      <div class="scoreboard">
+      <h2 class="scores"></h2>
+      </div>
 
     </body>
 
