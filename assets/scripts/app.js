@@ -14,19 +14,19 @@ $(() => {
   $('#sidebar').click(function () {
     $('.show-hide').toggle()
   })
-
+  // triggers change password and sign out form
   $('#sidebar-2').click(function () {
     $('.show-hide-2').toggle()
   })
-
+  // triggers in gamebaord
   $('#create-game').click(function () {
     $('.toggle-all-games').toggle()
   })
-
+  // displays game history
   $('#game-history').click(function () {
     $('.show-hide-3').toggle()
   })
-
+  // CRUD api call click events
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
